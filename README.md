@@ -12,22 +12,6 @@ near future.
 
 # ndt7 Go client
 
-Reference ndt7 Go client implementation. Useful resources:
-
-- [API exposed by this library](
-    https://godoc.org/github.com/m-lab/ndt7-client-go
-);
-
-- [Manual for the ndt7-client CLI program](
-    https://godoc.org/github.com/m-lab/ndt7-client-go/cmd/ndt7-client
-);
-
-- [ndt7 protocol specification](
-    https://github.com/m-lab/ndt-server/blob/master/spec/ndt7-protocol.md
-).
-
-The master branch contains stable code. We don't promise we won't break
-the API, but we'll try not to.
 
 ## Installing
 
@@ -40,7 +24,7 @@ export GO111MODULE=on
 Clone the repository wherever you want with
 
 ```bash
-git clone https://github.com/m-lab/ndt7-client-go
+git clone https://github.com/Abousidikou/ndt7-monitor
 ```
 
 From inside the repository, use `go get ./cmd/ndt7-client` to
@@ -50,7 +34,7 @@ build the client. Binaries will be placed in `$GOPATH/bin`, if
 If you're into a one-off install, this
 
 ```bash
-go get -v github.com/m-lab/ndt7-client-go/cmd/ndt7-client
+go get -v https://github.com/Abousidikou/ndt7-monitor
 ```
 
 is equivalent to cloning the repository, running `go get ./cmd/ndt7-client`,
