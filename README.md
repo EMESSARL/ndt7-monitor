@@ -1,12 +1,14 @@
-[![GoDoc](https://godoc.org/github.com/m-lab/ndt7-client-go?status.svg)](https://godoc.org/github.com/m-lab/ndt7-client-go) [![Build Status](https://travis-ci.org/m-lab/ndt7-client-go.svg?branch=master)](https://travis-ci.org/m-lab/ndt7-client-go) [![Coverage Status](https://coveralls.io/repos/github/m-lab/ndt7-client-go/badge.svg?branch=master)](https://coveralls.io/github/m-lab/ndt7-client-go?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/m-lab/ndt7-client-go)](https://goreportcard.com/report/github.com/m-lab/ndt7-client-go)
-
-:exclamation: **Breaking changes are planned for some ndt7 clients.** :exclamation:
 
 > If you are using ndt7-client.exe to target specific M-Lab servers, please
 contact support@measurementlab.net. These clients should be scheduled
 randomly rather than synchronously to improve server & client measurements.
 We are deploying changes to the ndt-server to require access tokens in the
 near future.
+
+# Go Install
+ - [Install golang correctly according to your platform](
+    https://golang.org/doc/install
+);
 
 # ndt7 Go client
 
@@ -53,3 +55,39 @@ go get -v github.com/m-lab/ndt7-client-go/cmd/ndt7-client
 
 is equivalent to cloning the repository, running `go get ./cmd/ndt7-client`,
 and then cancelling the repository directory.
+
+
+# Setting automatic testing
+
+- Start by making autoTest.sh executable
+```bash
+chmod +x autoTest.sh
+```
+- Install cron
+    - Debian/Ubuntu 
+    ```bash
+    # apt-get update & apt-get -y upgrade
+    # apt-get install cron
+    ```
+    - Fedora/CentOS
+    ```bash
+    # yum -y update
+    # yum install vixie-cron
+    ```
+- Configure crontab
+    ```bash
+    crontab -e
+    ```
+    - Select your editor
+    - Write on top replacing (path_to_autoTest.sh by the real path)
+    ```bash
+    PATH=/usr/bin:/bin:/home/path_to_autoTest.sh>
+    ```
+    - Write this on the bottom to execute test all 2 hours
+    ```bash
+    * */2 * * * autotest.sh >> log.file
+    ```
+- You can execute the test manually with:
+```bash
+./autoTest.sh
+```
