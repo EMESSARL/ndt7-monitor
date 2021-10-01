@@ -24,7 +24,7 @@ export GO111MODULE=on
 Clone the repository wherever you want with
 
 ```bash
-git clone https://github.com/Abousidikou/ndt7-monitor
+git clone https://github.com/Abousidikou/ndt7-monitor.git
 ```
 
 From inside the repository, use `go get ./cmd/ndt7-client` to
@@ -34,7 +34,7 @@ build the client. Binaries will be placed in `$GOPATH/bin`, if
 If you're into a one-off install, this
 
 ```bash
-go get -v https://github.com/Abousidikou/ndt7-monitor
+go get -v https://github.com/Abousidikou/ndt7-monitor.git
 ```
 
 is equivalent to cloning the repository, running `go get ./cmd/ndt7-client`,
