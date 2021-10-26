@@ -24,35 +24,35 @@ Here is the client use to test either manually or automatically monitor.uac.bj
   sudo mv go /usr/local 
   ```
   
-  Now you need to setup Go language environment variables for your project. Commonly you need to set 3 environment variables as GOROOT, GOPATH and PATH.
-    - Create go directory
-      ```bash
-      mkdir ~/go
-      ```
-    - Edit ~/.profile file
-        ```bash 
-        nano ~/.profile
-        ```
-        Add this below at the end of file
-       ```bash
-        export GOROOT=/usr/local/go 
-        export GOPATH=$HOME/go 
-        export PATH=$GOPATH/bin:$GOROOT/bin:$PATH 
-       ```
-       Refresh profile file to 
-       ```bash
-         source ~/.profile
-       ```
-   
+Now you need to setup Go language environment variables for your project. Commonly you need to set 3 environment variables as GOROOT, GOPATH and PATH.
+Create go directory
+```bash
+mkdir ~/go
+```
+Edit ~/.profile file
+```bash 
+nano ~/.profile
+```
+Add this below at the end of file
+```bash
+export GOROOT=/usr/local/go 
+export GOPATH=$HOME/go 
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH 
+```
+Refresh profile file to 
+```bash
+source ~/.profile
+```
+
     
-   Verify the installation 
-    ```bash
-    go version
-    ```
-   Result
-    ```bash
-    go version go1.16.4 linux/amd64
-    ```
+Verify the installation 
+```bash
+go version
+```
+Result
+```bash
+go version go1.16.4 linux/amd64
+```
     
 # ndt7 Go client
 
@@ -115,16 +115,16 @@ cp autoTest.sh ~/go
     yum install vixie-cron
     ```
 - Configure crontab
-    ```bash
-    crontab -e
-    ```
-    - Select your editor
-    - Write this on top of the file
-    ```bash
-    PATH=/usr/bin:/bin:/home/go/autoTest.sh>
-    ```
-    - Write this on the bottom to execute test all 2 hours and DON'T FORGET ADDING A NEW LINE AT THE END
-    ```bash
-    * */2 * * * autotest.sh >> log.file
-    ```
+```bash
+crontab -e
+```
+- Select your editor
+- Write this on top of the file
+```bash
+PATH=/usr/bin:/bin:/home/go/autoTest.sh
+```
+- Write this on the bottom to execute test all 2 hours and DON'T FORGET ADDING A NEW LINE AT THE END
+```bash
+0 */2 * * * autotest.sh >> log.file
+```
     
