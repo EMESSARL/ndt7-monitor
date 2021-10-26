@@ -29,9 +29,9 @@ Create go directory
 ```bash
 mkdir ~/go
 ```
-Edit ~/.profile file
+Edit ~/.bashrc file
 ```bash 
-nano ~/.profile
+nano ~/.bashrc
 ```
 Add this below at the end of file
 ```bash
@@ -41,7 +41,7 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 ```
 Refresh profile file to 
 ```bash
-source ~/.profile
+source ~/.bashrc
 ```
 
     
@@ -119,13 +119,12 @@ cp autoTest.sh ~/go
 crontab -e
 ```
 - Select your editor
-- Write this on top of the file by replacing "username"
- by your username
+- Write this on top of the file by replacing "username" by your username
 ```bash
 PATH=/usr/bin:/bin:/home/username/go
 ```
-- Write this on the bottom to execute test all 2 hours and DON'T FORGET ADDING A NEW LINE AT THE END
+- Write this on the bottom to execute test everyv 1 hours and DON'T FORGET ADDING A NEW LINE AT THE END
 ```bash
-0 */2 * * * autotest.sh >> log.file
+0 */1 * * * autotest.sh >> ~/go/log.file
 ```
     
