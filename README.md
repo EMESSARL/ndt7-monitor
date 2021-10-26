@@ -119,9 +119,10 @@ cp autoTest.sh ~/go
 crontab -e
 ```
 - Select your editor
-- Write this on top of the file
+- Write this on top of the file by replacing "username"
+ by your username
 ```bash
-PATH=/usr/bin:/bin:/home/go/autoTest.sh
+PATH=/usr/bin:/bin:/home/username/go
 ```
 - Write this on the bottom to execute test all 2 hours and DON'T FORGET ADDING A NEW LINE AT THE END
 ```bash
