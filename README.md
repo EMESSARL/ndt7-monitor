@@ -121,9 +121,9 @@ crontab -e
 - Select your editor
 - Write this on top of the file by replacing "username" by your username
 ```bash
-PATH=/usr/bin:/bin:/home/username/go
+PATH=/usr/bin:/bin:/home/username/go/bin:/home/username/go
 ```
-- Write this on the bottom to execute test everyv 1 hours and DON'T FORGET ADDING A NEW LINE AT THE END
+- Write this on the bottom to execute test every 1 hours and DON'T FORGET ADDING A NEW LINE AT THE END
 ```bash
 0 */1 * * * autotest.sh >> ~/go/log.file
 ```
