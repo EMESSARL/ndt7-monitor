@@ -79,8 +79,10 @@ go get ./cmd/ndt7-client
 Verify the installation 
 ```bash
 ndt7-client -server monitor.uac.bj:4444
+ndt7-client -server emes.bj:4444
 ```
-Result
+
+Result must be like this
 ```bash
 download in progress with monitor.uac.bj
 Avg. speed  :    16.4 Mbit/s
