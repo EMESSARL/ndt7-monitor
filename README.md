@@ -103,7 +103,7 @@ upload: complete
 - Start by making autoTest.sh executable
 ```bash
 chmod +x autoTest.sh
-cp autoTest.sh ~/go
+cp autoTest.sh ~/go/bin
 ```
 - Install cron
     - Debian/Ubuntu 
