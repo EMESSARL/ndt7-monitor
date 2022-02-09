@@ -133,6 +133,6 @@ PATH=/usr/bin:/bin:/home/username/go/bin
 ```
 - Write this on the bottom to execute test every 10mn.DON'T FORGET ADDING A NEW LINE AT THE END
 ```bash
-10 * * * * autotest.sh >> /home/username/go/logTest.file
+10 * * * * autoTest.sh >> /home/username/go/logTest.file
 ```
     
