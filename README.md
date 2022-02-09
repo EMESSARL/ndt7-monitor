@@ -1,7 +1,7 @@
 
 # ndt-client
 
-Here is the client use to test either manually or automatically monitor.uac.bj
+Here is the client use to test either manually or automatically monitor.uac.bj and emes.bj
 
 # Go Install
   Login to your Ubuntu system using ssh and upgrade to apply latest security updates there.
@@ -53,6 +53,10 @@ Result
 ```bash
 go version go1.16.4 linux/amd64
 ```
+
+# QUIC-CLient
+
+Before continue, install [QUIC-CLient](https://github.com/Abousidikou/quic-client) 
     
 # ndt7 Go client
 
@@ -80,8 +84,8 @@ Verify the installation
 ```bash
 ndt7-client -server monitor.uac.bj:4444
 ndt7-client -server emes.bj:4444
-quic-client -url monitor.uac.bj:4447
-quic-client -url  emes.bj:4447
+quic-client -url monitor.uac.bj
+quic-client -url  emes.bj
 ```
 
 Result must be like this
