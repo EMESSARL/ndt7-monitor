@@ -84,8 +84,8 @@ Verify the installation
 ```bash
 ndt7-client -server monitor.uac.bj:4444
 ndt7-client -server emes.bj:4444
-quic-client -url monitor.uac.bj
-quic-client -url  emes.bj
+quic-client -u monitor.uac.bj
+quic-client -u  emes.bj
 ```
 
 Result must be like this
@@ -102,8 +102,25 @@ upload: complete
        Download:    16.4 Mbit/s
          Upload:     5.9 Mbit/s
  Retransmission:   10.22 %
+ 
+QUIC Testing
+Server :  173.249.45.104:4447
+Msg Size:  262144
+Nombre de stream:  30
+Upload Testing
+Upload Complete
+Download Testing
+Download Complete
+Results:
+         Avg. Download Speed:  12.992  Mbps
+         Avg. Upload Speed: 5.245 Mbps
 ```
 
+#  Having UDP-Receive-Buffer-Size Problem
+Experiments have shown that QUIC transfers on high-bandwidth connections can be limited by the size of the UDP receive buffer.This buffer holds packets that have been received by the kernel, but not yet read by the application (quic-go in this case). Once this buffer fills up, the kernel will drop any new incoming packet. Unfortunately, on Linux this value is rather small, too small for high-bandwidth QUIC transfers. See (UDP Receive Buffer)[https://github.com/lucas-clemente/quic-go/wiki/UDP-Receive-Buffer-Size]
+```bash
+sysctl -w net.core.rmem_max=2500000
+```
 # Setting automatic testing
 
 - Start by making autoTest.sh executable
@@ -131,7 +148,7 @@ crontab -e
 ```bash
 PATH=/usr/bin:/bin:/home/username/go/bin
 ```
-- Write this on the bottom to execute test every 10mn.DON'T FORGET ADDING A NEW LINE AT THE END
+- Write this on the bottom to execute test every 10mn. DON'T FORGET ADDING A NEW LINE AT THE END
 ```bash
 10 * * * * autoTest.sh >> /home/username/go/logTest.file
 ```
