@@ -117,7 +117,7 @@ Results:
 ```
 
 #  Having UDP-Receive-Buffer-Size Problem
-Experiments have shown that QUIC transfers on high-bandwidth connections can be limited by the size of the UDP receive buffer.This buffer holds packets that have been received by the kernel, but not yet read by the application (quic-go in this case). Once this buffer fills up, the kernel will drop any new incoming packet. Unfortunately, on Linux this value is rather small, too small for high-bandwidth QUIC transfers. See (UDP Receive Buffer)[https://github.com/lucas-clemente/quic-go/wiki/UDP-Receive-Buffer-Size]
+Experiments have shown that QUIC transfers on high-bandwidth connections can be limited by the size of the UDP receive buffer.This buffer holds packets that have been received by the kernel, but not yet read by the application (quic-go in this case). Once this buffer fills up, the kernel will drop any new incoming packet. Unfortunately, on Linux this value is rather small, too small for high-bandwidth QUIC transfers. See [UDP Receive Buffer](https://github.com/lucas-clemente/quic-go/wiki/UDP-Receive-Buffer-Size)
 ```bash
 sysctl -w net.core.rmem_max=2500000
 ```
