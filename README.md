@@ -72,12 +72,15 @@ export GO111MODULE=on
 Clone the repository wherever you want with
 
 ```bash
-git clone https://github.com/Abousidikou/ndt7-monitor.git && cd ndt7-monitor
+git clone https://github.com/Abousidikou/ndt7-monitor.git && cd ndt7-monitor/cmd/ndt7-client
 ```
 
 Install ndt7-client
 ```bash
-go get ./cmd/ndt7-client
+go build
+```
+```bash
+mv ndt7-client /usr/local/go/bin 
 ```
 
 Verify the installation 
