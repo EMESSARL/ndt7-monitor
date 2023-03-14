@@ -56,7 +56,7 @@ go version go1.16.4 linux/amd64
 
 # QUIC-CLient
 
-Before continue, install [QUIC-CLient](https://github.com/Abousidikou/quic-client) 
+Before continue, install [QUIC-CLient](https://github.com/EMESSARL/quic-client) 
     
 # ndt7 Go client
 
